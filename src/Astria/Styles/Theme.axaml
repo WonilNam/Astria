@@ -1,0 +1,120 @@
+﻿<Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Styles.Resources>
+    <SolidColorBrush x:Key="TextPrimary">#F0F2FA</SolidColorBrush>
+    <SolidColorBrush x:Key="TextSecondary">#B9C3DB</SolidColorBrush>
+    <SolidColorBrush x:Key="Accent">#B8ADFF</SolidColorBrush>
+    <SolidColorBrush x:Key="Surface">#701A2035</SolidColorBrush>
+    <SolidColorBrush x:Key="Hairline">#20B8C6F0</SolidColorBrush>
+    <SolidColorBrush x:Key="TextControlBackgroundFocused">#252D44</SolidColorBrush>
+    <SolidColorBrush x:Key="TextControlBackgroundPointerOver">#252D44</SolidColorBrush>
+  </Styles.Resources>
+  <Style Selector="Window">
+    <Setter Property="FontFamily" Value="Segoe UI, Microsoft YaHei UI" />
+    <Setter Property="FontSize" Value="14" />
+    <Setter Property="Foreground" Value="{StaticResource TextPrimary}" />
+  </Style>
+  <Style Selector="TextBlock.muted"><Setter Property="Foreground" Value="{StaticResource TextSecondary}" /></Style>
+  <Style Selector="TextBlock.eyebrow"><Setter Property="Foreground" Value="{DynamicResource Accent}" /><Setter Property="FontSize" Value="11" /><Setter Property="LetterSpacing" Value="2" /></Style>
+  <Style Selector="Button">
+    <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="CornerRadius" Value="10" />
+    <Setter Property="MinHeight" Value="36" />
+    <Setter Property="Padding" Value="14,9" />
+  </Style>
+  <Style Selector="Button.quiet"><Setter Property="Background" Value="Transparent" /><Setter Property="BorderThickness" Value="0" /></Style>
+  <Style Selector="Button.primary"><Setter Property="Background" Value="{DynamicResource Accent}" /><Setter Property="Foreground" Value="#171529" /><Setter Property="FontWeight" Value="SemiBold" /></Style>
+  <Style Selector="Button.outline"><Setter Property="Background" Value="#10282C45" /><Setter Property="BorderBrush" Value="{StaticResource Hairline}" /><Setter Property="BorderThickness" Value="1" /></Style>
+  <Style Selector="Button.nav"><Setter Property="HorizontalContentAlignment" Value="Left" /><Setter Property="Background" Value="Transparent" /><Setter Property="Foreground" Value="{StaticResource TextSecondary}" /><Setter Property="Margin" Value="0,3" /><Setter Property="Height" Value="46" /></Style>
+  <Style Selector="Button.nav.active"><Setter Property="Background" Value="#25B8ADFF" /><Setter Property="Foreground" Value="#D5CDFF" /></Style>
+  <Style Selector="Border.card"><Setter Property="Background" Value="{StaticResource Surface}" /><Setter Property="BorderBrush" Value="{StaticResource Hairline}" /><Setter Property="BorderThickness" Value="1" /><Setter Property="CornerRadius" Value="16" /><Setter Property="Padding" Value="22" /></Style>
+  <Style Selector="TextBox"><Setter Property="CornerRadius" Value="10" /><Setter Property="Background" Value="#5021273E" /><Setter Property="BorderBrush" Value="{StaticResource Hairline}" /><Setter Property="MinHeight" Value="42" /></Style>
+  <Style Selector="ListBox.apps"><Setter Property="Background" Value="Transparent" /><Setter Property="BorderThickness" Value="0" /><Setter Property="Padding" Value="0" /></Style>
+  <Style Selector="ListBox.apps > ListBoxItem"><Setter Property="Padding" Value="0" /><Setter Property="Margin" Value="4" /><Setter Property="CornerRadius" Value="14" /><Setter Property="HorizontalContentAlignment" Value="Stretch" /></Style>
+  <Style Selector="ListBox.apps > ListBoxItem:selected"><Setter Property="Background" Value="#28B8ADFF" /></Style>
+  <Style Selector="Button.tile">
+    <Setter Property="Width" Value="132" /><Setter Property="Height" Value="124" />
+    <Setter Property="Padding" Value="10" /><Setter Property="Background" Value="Transparent" />
+    <Setter Property="BorderBrush" Value="Transparent" /><Setter Property="BorderThickness" Value="0" />
+    <Setter Property="CornerRadius" Value="14" />
+    <Setter Property="RenderTransformOrigin" Value="50%,50%" />
+    <Setter Property="Transitions"><Transitions><TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.16" /></Transitions></Setter>
+  </Style>
+  <Style Selector="Button.tile:pointerover"><Setter Property="RenderTransform" Value="none" /></Style>
+  <Style Selector="Button.tile.drop-target /template/ ContentPresenter#PART_ContentPresenter"><Setter Property="Background" Value="#203B365C" /></Style>
+  <Style Selector="Button.tile:pointerover /template/ ContentPresenter#PART_ContentPresenter"><Setter Property="Background" Value="#34324358" /><Setter Property="BorderBrush" Value="#65B8ADFF" /></Style>
+  <Style Selector="Button.dock:pointerover /template/ ContentPresenter#PART_ContentPresenter"><Setter Property="Background" Value="#303E4761" /></Style>
+  <Style Selector="Button.dock"><Setter Property="Width" Value="58" /><Setter Property="Height" Value="58" /><Setter Property="Padding" Value="4" /><Setter Property="Background" Value="Transparent" /><Setter Property="BorderThickness" Value="0" /><Setter Property="RenderTransformOrigin" Value="50%,100%" /><Setter Property="Transitions"><Transitions><TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.15" /></Transitions></Setter></Style>
+  <Style Selector="Button.dock:pointerover"><Setter Property="RenderTransform" Value="translateY(-5px) scale(1.10)" /></Style>
+  <Style Selector="Button.dock:focus-visible"><Setter Property="BorderBrush" Value="{StaticResource Accent}" /><Setter Property="BorderThickness" Value="1" /></Style>
+  <Style Selector="Window.reduced-motion Button.tile:pointerover"><Setter Property="RenderTransform" Value="none" /></Style>
+  <Style Selector="Window.reduced-motion Button.dock:pointerover"><Setter Property="RenderTransform" Value="none" /></Style>
+  <Style Selector="Window.reduced-motion Button.tile"><Setter Property="Transitions"><Transitions /></Setter></Style>
+  <Style Selector="Window.reduced-motion Button.dock"><Setter Property="Transitions"><Transitions /></Setter></Style>
+  <Style Selector="Button.album-card"><Setter Property="Template"><ControlTemplate><ContentPresenter Content="{TemplateBinding Content}" CornerRadius="26" Background="Transparent" BorderThickness="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" /></ControlTemplate></Setter></Style>
+  <Style Selector="Button.album-card:pointerover /template/ ContentPresenter"><Setter Property="Background" Value="Transparent" /></Style>
+  <Style Selector="Button.album-card:pressed /template/ ContentPresenter#PART_ContentPresenter"><Setter Property="Background" Value="Transparent" /></Style>
+  <Style Selector="Button.dock-pill-btn">
+    <Setter Property="Background" Value="#30202840" />
+    <Setter Property="BorderBrush" Value="#30AFBDDF" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="CornerRadius" Value="14" />
+    <Setter Property="Padding" Value="12,6" />
+    <Setter Property="MinHeight" Value="32" />
+    <Setter Property="RenderTransformOrigin" Value="50%,50%" />
+    <Setter Property="Transitions">
+      <Transitions>
+        <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.12" />
+      </Transitions>
+    </Setter>
+  </Style>
+  <Style Selector="Button.dock-pill-btn:pointerover">
+    <Setter Property="RenderTransform" Value="scale(1.05)" />
+  </Style>
+  <Style Selector="Button.dock-pill-btn:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+    <Setter Property="Background" Value="#553A486E" />
+    <Setter Property="BorderBrush" Value="#80A8C5FF" />
+  </Style>
+  <Style Selector="Button.dock-pill-btn.primary">
+    <Setter Property="Background" Value="#455B3BAF" />
+    <Setter Property="BorderBrush" Value="#709E7BFF" />
+  </Style>
+  <Style Selector="Button.dock-pill-btn.primary:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+    <Setter Property="Background" Value="#707A55E0" />
+    <Setter Property="BorderBrush" Value="#B0C8FFFF" />
+  </Style>
+  <Style Selector="Button.window-control">
+    <Setter Property="Width" Value="38" /><Setter Property="Height" Value="30" /><Setter Property="MinHeight" Value="30" />
+    <Setter Property="Padding" Value="0" /><Setter Property="CornerRadius" Value="7" />
+    <Setter Property="Background" Value="Transparent" /><Setter Property="BorderThickness" Value="0" /><Setter Property="Foreground" Value="#B9C3DB" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" /><Setter Property="VerticalContentAlignment" Value="Center" />
+  </Style>
+  <Style Selector="Button.window-control:pointerover /template/ ContentPresenter#PART_ContentPresenter"><Setter Property="Background" Value="#283B4661" /></Style>
+  <Style Selector="Button.window-control.close:pointerover"><Setter Property="Foreground" Value="White" /></Style>
+  <Style Selector="Button.window-control.close:pointerover /template/ ContentPresenter#PART_ContentPresenter"><Setter Property="Background" Value="#C83C49" /></Style>
+  <Style Selector="Button.window-control:pressed /template/ ContentPresenter#PART_ContentPresenter"><Setter Property="Background" Value="#405366" /></Style>
+  <Style Selector="ContextMenu">
+    <Setter Property="Background" Value="#F51B2234" /><Setter Property="BorderBrush" Value="#40586683" />
+    <Setter Property="BorderThickness" Value="1" /><Setter Property="CornerRadius" Value="12" /><Setter Property="Padding" Value="6" />
+    <Setter Property="MinWidth" Value="180" /><Setter Property="Foreground" Value="#E4EAF7" />
+    <Setter Property="FontSize" Value="12" />
+  </Style>
+  <Style Selector="ContextMenu MenuItem">
+    <Setter Property="Padding" Value="12,9" /><Setter Property="MinHeight" Value="34" />
+    <Setter Property="CornerRadius" Value="7" /><Setter Property="Foreground" Value="#E4EAF7" />
+  </Style>
+  <Style Selector="ContextMenu MenuItem:pointerover /template/ Border#PART_LayoutRoot"><Setter Property="Background" Value="#353C4C70" /></Style>
+  <Style Selector="ContextMenu MenuItem:selected /template/ Border#PART_LayoutRoot"><Setter Property="Background" Value="#353C4C70" /></Style>
+  <Style Selector="Button.page-arrow">
+    <Setter Property="Width" Value="48" /><Setter Property="Height" Value="42" /><Setter Property="MinHeight" Value="42" />
+    <Setter Property="Padding" Value="0" /><Setter Property="FontSize" Value="28" /><Setter Property="CornerRadius" Value="10" />
+    <Setter Property="Background" Value="#182E3853" /><Setter Property="BorderThickness" Value="1" /><Setter Property="BorderBrush" Value="#304D5E80" /><Setter Property="Foreground" Value="#D4DDF2" />
+  </Style>
+  <Style Selector="Button.page-arrow:pointerover /template/ ContentPresenter#PART_ContentPresenter"><Setter Property="Background" Value="#293E4C69" /></Style>
+  <Style Selector="Button.page-arrow:disabled"><Setter Property="Opacity" Value="0.3" /></Style>
+  <Style Selector="Button.page-arrow:disabled /template/ ContentPresenter#PART_ContentPresenter"><Setter Property="Background" Value="Transparent" /></Style>
+  <Style Selector="ListBox.partner-list"><Setter Property="Background" Value="#131A2A" /><Setter Property="BorderThickness" Value="1" /><Setter Property="BorderBrush" Value="#304F607F" /><Setter Property="CornerRadius" Value="10" /><Setter Property="Padding" Value="5" /></Style>
+  <Style Selector="ListBox.partner-list > ListBoxItem"><Setter Property="Padding" Value="4" /><Setter Property="Margin" Value="0,2" /><Setter Property="CornerRadius" Value="7" /></Style>
+  <Style Selector="ListBox.partner-list > ListBoxItem:selected"><Setter Property="Background" Value="#354D4A76" /></Style>
+  <Style Selector="Button.tray-action"><Setter Property="Background" Value="Transparent" /><Setter Property="BorderThickness" Value="0" /><Setter Property="Foreground" Value="#E4EAF7" /><Setter Property="HorizontalContentAlignment" Value="Left" /><Setter Property="Padding" Value="12,9" /><Setter Property="FontSize" Value="12" /><Setter Property="CornerRadius" Value="7" /></Style>
+  <Style Selector="Button.tray-action:pointerover /template/ ContentPresenter#PART_ContentPresenter"><Setter Property="Background" Value="#3548577A" /></Style>
+</Styles>

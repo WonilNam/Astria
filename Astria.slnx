@@ -1,0 +1,1 @@
+<Solution><Folder Name="/src/"><Project Path="src/Astria.Domain/Astria.Domain.csproj"/><Project Path="src/Astria.Application/Astria.Application.csproj"/><Project Path="src/Astria.Infrastructure/Astria.Infrastructure.csproj"/><Project Path="src/Astria/Astria.csproj"/></Folder><Folder Name="/tests/"><Project Path="tests/Astria.Tests/Astria.Tests.csproj"/></Folder></Solution>

@@ -1,0 +1,89 @@
+﻿<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ x:Class="Astria.Desktop.Views.DockWindow" Title="星屿 · 应用空间"
+ SystemDecorations="None" CanResize="False" ShowInTaskbar="False" ShowActivated="False" Topmost="True"
+ Background="Transparent" TransparencyLevelHint="Transparent" Width="1060" Height="620">
+  <Grid>
+    <!-- Background cosmic scene and floating cards -->
+    <Canvas x:Name="Gallery" Background="Transparent" ClipToBounds="False" Focusable="True" />
+    <StackPanel x:Name="EmptyFavorites" IsVisible="False" IsHitTestVisible="False" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="12">
+      <TextBlock Text="把常用应用留在首页" FontSize="21" Foreground="#EEF2FF" HorizontalAlignment="Center" />
+      <TextBlock Text="右键应用选择「设为常用」 · 翻页浏览其他应用" FontSize="12" Foreground="#B5C3DF" />
+    </StackPanel>
+    <Canvas x:Name="RingBackdrop" IsHitTestVisible="False" Opacity="0.12" IsVisible="False" />
+    <Border x:Name="SearchPanel" HorizontalAlignment="Center" VerticalAlignment="Center" Width="360" CornerRadius="16" Background="#F0182132" BorderBrush="#304B607F" BorderThickness="1" Padding="12,4" Opacity="0" IsHitTestVisible="False">
+      <Border.Transitions><Transitions><DoubleTransition Property="Opacity" Duration="0:0:0.16" /></Transitions></Border.Transitions>
+      <StackPanel>
+        <TextBox x:Name="DockSearch" Watermark="搜索应用、拼音…" FontSize="13" MinHeight="36" Background="Transparent" BorderThickness="0" TextChanged="OnSearchChanged" AutomationProperties.Name="星环搜索">
+          <TextBox.Resources>
+            <SolidColorBrush x:Key="TextControlBorderBrushFocused">Transparent</SolidColorBrush>
+            <SolidColorBrush x:Key="TextControlBackgroundFocused">Transparent</SolidColorBrush>
+            <SolidColorBrush x:Key="TextControlBackgroundPointerOver">Transparent</SolidColorBrush>
+          </TextBox.Resources>
+        </TextBox>
+        <TextBlock x:Name="SearchHint" IsVisible="False" Foreground="#AAB9DF" FontSize="11" Margin="12,0,12,6" />
+      </StackPanel>
+    </Border>
+
+    <!-- Sleek frosted acrylic Dock Control Bar -->
+    <Border x:Name="ControlBar" HorizontalAlignment="Center" VerticalAlignment="Bottom"
+            Margin="0,0,0,24" CornerRadius="20" Padding="8,6"
+            Background="#60111524" BorderBrush="#35A0B2E2" BorderThickness="1"
+            BoxShadow="0 12 36 0 #70000000" RenderTransformOrigin="50%,50%">
+      <Border.Transitions>
+        <Transitions>
+          <DoubleTransition Property="Opacity" Duration="0:0:0.22" />
+          <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.22" />
+        </Transitions>
+      </Border.Transitions>
+      <StackPanel Orientation="Horizontal" Spacing="6" VerticalAlignment="Center">
+        <!-- ＋ 添加应用 -->
+        <Button x:Name="AddAppButton" Classes="dock-pill-btn primary">
+          <StackPanel Orientation="Horizontal" Spacing="6" VerticalAlignment="Center">
+            <TextBlock Text="＋" FontSize="13" FontWeight="Bold" Foreground="#D5E8FF" VerticalAlignment="Center" />
+            <TextBlock Text="添加应用" FontSize="12" Foreground="White" FontWeight="SemiBold" VerticalAlignment="Center" />
+          </StackPanel>
+        </Button>
+
+        <Border Width="1" Height="16" Background="#25FFFFFF" Margin="2,0" />
+
+        <!-- 📁 应用库 / 搜索 -->
+        <Button x:Name="LibraryButton" Classes="dock-pill-btn">
+          <StackPanel Orientation="Horizontal" Spacing="6" VerticalAlignment="Center">
+            <TextBlock Text="📁" FontSize="12" VerticalAlignment="Center" />
+            <TextBlock Text="应用库" FontSize="12" Foreground="#D0DCFF" VerticalAlignment="Center" />
+          </StackPanel>
+        </Button>
+
+        <!-- ↺ 整理星空 -->
+        <Button x:Name="ResetButton" Classes="dock-pill-btn">
+          <StackPanel Orientation="Horizontal" Spacing="6" VerticalAlignment="Center">
+            <TextBlock Text="↺" FontSize="13" Foreground="#B0CAFF" VerticalAlignment="Center" />
+            <TextBlock Text="整理星空" FontSize="12" Foreground="#D0DCFF" VerticalAlignment="Center" />
+          </StackPanel>
+        </Button>
+
+        <Button x:Name="DesktopIconsButton" Classes="dock-pill-btn">
+          <StackPanel Orientation="Horizontal" Spacing="6" VerticalAlignment="Center">
+            <Path Data="M1,2 L15,2 L15,11 L1,11 Z M8,11 L8,14 M4,14 L12,14" Stroke="#B0CAFF" StrokeThickness="1.3" Width="16" Height="16" />
+            <TextBlock x:Name="DesktopIconsText" Text="隐藏桌面图标" FontSize="12" Foreground="#D0DCFF" VerticalAlignment="Center" />
+          </StackPanel>
+        </Button>
+        <!-- ⚙ 偏好设置 -->
+        <Button x:Name="SettingsButton" Classes="dock-pill-btn">
+          <StackPanel Orientation="Horizontal" Spacing="6" VerticalAlignment="Center">
+            <TextBlock Text="⚙" FontSize="12" Foreground="#B0CAFF" VerticalAlignment="Center" />
+            <TextBlock Text="设置" FontSize="12" Foreground="#D0DCFF" VerticalAlignment="Center" />
+          </StackPanel>
+        </Button>
+
+        <!-- 翻页指示与控制 -->
+        <Border x:Name="PageSeparator" Width="1" Height="16" Background="#25FFFFFF" Margin="2,0" />
+        <StackPanel x:Name="PagePanel" Orientation="Horizontal" Spacing="4" VerticalAlignment="Center">
+          <Button x:Name="PrevButton" Classes="dock-pill-btn" Content="◀" Padding="8,4" MinHeight="28" />
+          <TextBlock x:Name="PageText" Text="1/1" FontSize="11" Foreground="#92A5CE" VerticalAlignment="Center" Margin="3,0" />
+          <Button x:Name="NextButton" Classes="dock-pill-btn" Content="▶" Padding="8,4" MinHeight="28" />
+        </StackPanel>
+      </StackPanel>
+    </Border>
+  </Grid>
+</Window>

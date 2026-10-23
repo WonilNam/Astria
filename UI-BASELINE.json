@@ -1,0 +1,28 @@
+{
+  "description": "User-owned Astria UI retained without changes to these files. Only composition and backend adapters were replaced.",
+  "files": {
+    "Views/ApplicationPicker.cs": "ed7f5826dd111006ee7cb28d3b4df2ee41f72ca2140e0f67a33ba61b87db1fc6",
+    "Views/Dialogs.cs": "5f51e18ece0b9a2a1cc9d94274619fb0807ee4f03ae442d0cc9d8b4a48cd7369",
+    "Views/DockWindow.axaml": "265f94ebcee4ebffe43f2c29595060a8ecc8683be45a873233903d8dab5760af",
+    "Views/DockWindow.axaml.cs": "b6f49940faa27ff9089e6697ebaf8d4c7fffe7892ee02ca3b077d770a3bd8786",
+    "Views/StarRingScene.cs": "4b3f96c8fb8420529595172b84f15e85f83a377790ab9849d30eeb399c2244b8",
+    "Views/TrayMenuWindow.cs": "329e634017e86007b5fbe48bf56e26faf008ea02bf127d727fd3d3cd582a2411",
+    "Views/WorkspaceWindow.axaml": "edbfe3ad2979348d02770adb242b9debc95804a430cce1fe4510fa7dcd494b2a",
+    "Views/WorkspaceWindow.axaml.cs": "bb185e80dd3684311a45442a26dc7451644d841a63f34f1b988be5a42812d35b",
+    "Views/WorkspaceWindow.Drag.cs": "9172979935c225f87a91c5e7cfddc5f6a6ec6d69713df9aac5c58f61d16be958",
+    "ViewModels/AppTile.cs": "072549996af2bdcb629f0799db5f1b4e37c85c27d54250f14dda5d5ec4f1005f",
+    "ViewModels/ObservableObject.cs": "d847ce3203238c7421b96fb464a89d2452e3b9c9ed2803d7f9d7898e8d0413be",
+    "ViewModels/WorkspaceViewModel.cs": "005071b9eca8f37ca8057cd28dce3191e5a499ffdd9223df35528058a8b9e114",
+    "Styles/Theme.axaml": "85ccf05193be8b0350aa2839bb1ffbbd41c97cf1411247184227fd962dff7fa9",
+    "Assets/Astria.ico": "4954d5ee40a37920a6e1470dac746d6673c38a547993f8b30195b936fcabf544",
+    "Assets/Astria.png": "c3d392d52dd2b4eee6f87ebe185693b68f3b35691b9d585dd48f4a1802fd38d9",
+    "Assets/Icon-design.md": "7a74b24ce1b2a03122621c2456cd0be7ced65f5ee61e88900027305224f090b8",
+    "App.axaml": "ccc53cb594fa7e9632ea8ee922fc8cbabcc04c800ed0100cca4387b7c73d0bd7",
+    "Services/ConstellationLayout.cs": "fd9540d9f2332c8f4418f9632c0ed5412b5100ad7fded028f8e14309cfde9bd1",
+    "Services/OrbitMotion.cs": "63419315ff83f1a16b8dfa86168e8e1a5ff7e298d7f7ff78cde2da4bc7c83497",
+    "Services/DesktopPalette.cs": "8bd88d18de4507e911b766f58487f2edd735170eb80f4c08aca44385f62ab22b",
+    "Services/WorkspacePlacement.cs": "aedfcd3398d904bc5df10f2bb1c902ccf30ecfb12014aae43e9f1c0b322a1845",
+    "Services/TileDrag.cs": "04dd5599f10fe5fd94d994c270baa5943dc6056f80bc3bd32822cd7e2d9c5bb5",
+    "Services/LaunchHotkey.cs": "9d1a82f1ac0631fabdb80739bd3b3251903463b2c438a1607d76175c82546f6b"
+  }
+}
